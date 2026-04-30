@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dia 3 — Introdução ao CSS</title>
+
+    <style>
+      /* Reset global de box-model e margens nativas */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Definições base do documento */
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #f0f0f0;
+        color: #222;
+        line-height: 1.6;
+        padding: 2rem;
+      }
+
+      /* Tipografia: Hierarquia de títulos e espaçamentos */
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 0.4rem;
+        color: #ffffff;
+      }
+      h2 {
+        font-size: 1.3rem;
+        color: #333;
+        margin-top: 2rem;
+        margin-bottom: 0.8rem;
+        padding-bottom: 0.4rem;
+        border-bottom: 2px solid #ccc;
+      }
+      h3 {
+        font-size: 1rem;
+        color: #444;
+        margin-top: 1.2rem;
+        margin-bottom: 0.4rem;
+      }
+      p {
+        margin-bottom: 0.8rem;
+      }
+
+      /* Seletor de ID: Layout do cabeçalho */
+      #cabecalho {
+        max-width: 720px;
+        margin: 0 auto 2rem auto;
+        background-color: #222;
+        color: #fff;
+        padding: 1.5rem 2rem;
+        border-radius: 6px;
+      }
+
+      #cabecalho p {
+        color: #bbb;
+        font-size: 0.9rem;
+      }
+
+      /* Seletor de Classe: Container padrão de conteúdo */
+      .secao {
+        max-width: 720px;
+        margin: 0 auto 1.5rem auto;
+        background-color: #fff;
+        padding: 1.5rem 2rem;
+        border-radius: 6px;
+      }
+
+      /* Formatação de blocos de código */
+      .codigo {
+        display: block;
+        font-family: "Courier New", monospace;
+        font-size: 0.85rem;
+        background-color: #f4f4f4;
+        border-left: 3px solid #999;
+        padding: 0.8rem 1rem;
+        margin: 0.8rem 0 1rem 0;
+        white-space: pre;
+        overflow-x: auto;
+      }
+
+      /* Utilitários de escala tipográfica */
+      .texto-pequeno {
+        font-size: 0.8rem;
+      }
+      .texto-normal {
+        font-size: 1rem;
+      }
+      .texto-grande {
+        font-size: 1.4rem;
+      }
+
+      /* Utilitários de alinhamento */
+      .alinhar-esq {
+        text-align: left;
+      }
+      .alinhar-centro {
+        text-align: center;
+      }
+      .alinhar-dir {
+        text-align: right;
+      }
+
+      /* Manipulação de espaçamento e recuo */
+      .espacamento-letras {
+        letter-spacing: 0.25em;
+      }
+      .espacamento-palavras {
+        word-spacing: 1.2rem;
+      }
+      .espacamento-linhas {
+        line-height: 2.8;
+      }
+      .recuo-texto {
+        text-indent: 2rem;
+      }
+
+      .negrito {
+        font-weight: bold;
+      }
+      .italico {
+        font-style: italic;
+      }
+
+      /* Transformação de texto */
+      .maiusculas {
+        text-transform: uppercase;
+      }
+      .minusculas {
+        text-transform: lowercase;
+      }
+      .capitalizar {
+        text-transform: capitalize;
+      }
+
+      /* Decoração de texto */
+      .sublinhado {
+        text-decoration: underline;
+      }
+      .riscado {
+        text-decoration: line-through;
+      }
+      .sem-sublinhado {
+        text-decoration: none;
+      }
+
+      /* Demonstração de formatos de cor (Hex, RGB, RGBA) */
+      .cor-nome {
+        color: tomato;
+      }
+      .cor-hex {
+        color: #1d4ed8;
+      }
+      .cor-rgb {
+        color: rgb(21, 128, 61);
+      }
+      .cor-rgba {
+        color: rgba(0, 0, 0, 0.35);
+      }
+
+      .fundo-claro {
+        background-color: #dbeafe;
+        padding: 0.4rem 0.6rem;
+        border-radius: 4px;
+      }
+      .fundo-escuro {
+        background-color: #1e293b;
+        color: #fff;
+        padding: 0.4rem 0.6rem;
+        border-radius: 4px;
+      }
+
+      /* Definições de bordas e estilos de linha */
+      .borda-solida {
+        border: 2px solid #333;
+        padding: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+      .borda-tracejada {
+        border: 2px dashed #888;
+        padding: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+      .borda-pontilhada {
+        border: 3px dotted #555;
+        padding: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+      .borda-colorida {
+        border: 2px solid #1d4ed8;
+        padding: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      /* Arredondamento de bordas (Box Radius) */
+      .cantos-8px {
+        border: 2px solid #333;
+        border-radius: 8px;
+        padding: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+      .cantos-pilula {
+        border: 2px solid #333;
+        border-radius: 50px;
+        padding: 0.4rem 1rem;
+        display: inline-block;
+      }
+
+      /* Bordas unidirecionais */
+      .so-esquerda {
+        border-left: 4px solid #1d4ed8;
+        padding-left: 1rem;
+        margin-bottom: 0.5rem;
+      }
+      .so-baixo {
+        border-bottom: 2px solid #ccc;
+        padding-bottom: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      /* Efeitos de sombra em blocos e texto */
+      .sombra-suave {
+        box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15);
+        padding: 0.8rem;
+        background: #fff;
+        margin-bottom: 0.5rem;
+        border-radius: 4px;
+      }
+      .sombra-dura {
+        box-shadow: 4px 4px 0 #333;
+        padding: 0.8rem;
+        background: #fff;
+        margin-bottom: 0.5rem;
+      }
+      .texto-sombra {
+        text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+        font-size: 1.4rem;
+        font-weight: bold;
+      }
+
+      /* Demonstração de especificidade (Elemento + Classe) */
+      p.destaque {
+        background-color: #fef9c3;
+        border-left: 3px solid #eab308;
+        padding: 0.5rem 0.8rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header id="cabecalho">
+      <h1>Dia 3 — Introdução ao CSS</h1>
+      <p>Seletores, propriedades de texto, cores, bordas e sombras.</p>
+    </header>
+
+    <section class="secao">
+      <h2>As 3 formas de usar CSS</h2>
+
+      <h3>1. Externo (recomendado)</h3>
+      <p>
+        Arquivo <code>.css</code> separado vinculado no
+        <code>&lt;head&gt;</code>.
+      </p>
+      <code class="codigo"
+        >&lt;link rel="stylesheet" href="estilos.css"&gt;</code
+      >
+
+      <h3>2. Interno</h3>
+      <p>
+        Estilos dentro da tag <code>&lt;style&gt;</code> no
+        <code>&lt;head&gt;</code>.
+      </p>
+      <code class="codigo"
+        >&lt;style&gt; body { background-color: #f0f0f0; } &lt;/style&gt;</code
+      >
+
+      <h3>3. Inline</h3>
+      <p>Estilo aplicado diretamente no atributo da tag HTML.</p>
+      <p style="color: red; font-weight: bold">
+        Exemplo de estilo inline aplicado aqui.
+      </p>
+    </section>
+
+    <section class="secao">
+      <h2>Seletores: Tag, Classe e ID</h2>
+      <p>
+        O seletor determina quais elementos HTML serão afetados pelas regras
+        declaradas.
+      </p>
+
+      <code class="codigo">
+        /* Tag: afeta todos os &lt;p&gt; */ p { color: #222; } /* Classe: afeta
+        múltiplos elementos */ .destaque { background-color: yellow; } /* ID:
+        afeta um elemento único */ #titulo { font-size: 2rem; }</code
+      >
+
+      <p class="destaque">
+        Este parágrafo utiliza o seletor <code>p.destaque</code>.
+      </p>
+    </section>
+
+    <section class="secao">
+      <h2>Propriedades de Texto</h2>
+      <h3>font-size</h3>
+      <p class="texto-pequeno">font-size: 0.8rem</p>
+      <p class="texto-normal">font-size: 1rem</p>
+      <p class="texto-grande">font-size: 1.4rem</p>
+
+      <h3>text-align</h3>
+      <p class="alinhar-esq" style="border: 1px dashed #ccc">Esquerda</p>
+      <p class="alinhar-centro" style="border: 1px dashed #ccc">Centralizado</p>
+      <p class="alinhar-dir" style="border: 1px dashed #ccc">Direita</p>
+
+      <h3>Espaçamentos</h3>
+      <p class="espacamento-letras">
+        Espaçamento entre letras (letter-spacing)
+      </p>
+      <p class="espacamento-palavras">
+        Espaçamento entre palavras (word-spacing)
+      </p>
+      <p class="espacamento-linhas">Espaçamento entre linhas (line-height)</p>
+      <p class="recuo-texto">Recuo da primeira linha (text-indent).</p>
+    </section>
+
+    <section class="secao">
+      <h2>Cores e Fundo</h2>
+      <p class="cor-nome">Tomato (Nome)</p>
+      <p class="cor-hex">#1d4ed8 (Hexadecimal)</p>
+      <p class="cor-rgb">rgb(21, 128, 61) (RGB)</p>
+      <p class="cor-rgba">rgba(0, 0, 0, 0.35) (RGBA)</p>
+
+      <h3>background-color</h3>
+      <p class="fundo-claro">Fundo Claro</p>
+      <p class="fundo-escuro">Fundo Escuro</p>
+    </section>
+
+    <section class="secao">
+      <h2>Bordas e Arredondamento</h2>
+      <div class="borda-solida">Sólida</div>
+      <div class="borda-tracejada">Tracejada</div>
+      <div class="borda-pontilhada">Pontilhada</div>
+      <div class="cantos-8px">Border-radius: 8px</div>
+      <span class="cantos-pilula">Estilo Pílula</span>
+    </section>
+
+    <section class="secao">
+      <h2>Efeitos de Sombra</h2>
+      <div class="sombra-suave">Sombra suave (box-shadow)</div>
+      <div class="sombra-dura">Sombra sólida</div>
+      <p class="texto-sombra">Sombra em texto (text-shadow)</p>
+    </section>
+  </body>
+</html>

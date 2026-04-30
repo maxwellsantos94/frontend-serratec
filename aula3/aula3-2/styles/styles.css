@@ -1,0 +1,132 @@
+:root {
+    --cor-fundo: #fff;
+    --cor-fundo-suave: #f4f4f4;
+    --cor-texto: #1a1a1a;
+    --cor-suave: #555;
+    --cor-destaque: #1d4ed8;
+    --cor-borda: #ddd;
+    --raio: 6px;
+}
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--cor-fundo);
+}
+
+header {
+    background-color: var(--cor-fundo);
+    border-bottom: 1px solid var(--cor-borda);
+
+}
+
+
+.header-inner {
+    display: flex;
+    padding: 1rem 1.5rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+    color: var(--cor-destaque);
+}
+
+nav ul {
+    gap: 1.5rem;
+    display: flex;
+    list-style: none;
+}
+
+nav a{
+ cursor: pointer;
+ font-size: 0.95rem;
+ color: var(--cor-suave);
+
+}
+
+nav a:hover{
+    color: var(--cor-destaque);
+}
+
+.hero {
+    gap: 1rem;
+    display: flex;
+    margin: 0 auto;
+    padding: 5rem 4rem;
+    flex-direction: column;
+}
+
+.hero-tag {
+    font-size: 0.8rem;
+    width: fit-content;
+    padding: 0.2rem 0.8rem;
+    color: var(--cor-suave);
+    border-radius: var(--raio);
+    border: 2px solid var(--cor-borda);
+}
+
+
+.hero h1 {
+    font-size: 2.8rem;
+    letter-spacing: -0.2rem;
+}
+
+.destaque {
+    font-size: 3.8rem;
+    color: var(--cor-destaque);
+}
+
+.hero p {
+    max-width: 520px;
+    font-size: 1.5rem;
+    color: var(--cor-texto);
+}
+
+.hero-botoes {
+    gap: 0.5rem;
+    display: flex;
+    margin-top: 0.5rem;
+}
+
+.btn-primario {
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0.5rem 1.4rem;
+    color: var(--cor-fundo);
+    border-radius: var(--raio);
+    background-color: var(--cor-destaque);
+}
+
+.btn-primario:hover {
+    background-color: rgb(3, 3, 57);
+}
+
+.btn-secundario {
+   cursor: pointer;
+    font-size: 1rem;
+    padding: 0.5rem 1.4rem;
+    color: var(--cor-destaque);
+    border-radius: var(--raio);
+    border: 2px solid var(--cor-destaque);
+    background-color: var(--cor-fundo);
+}
+
+.btn-secundario:hover {
+    color: var(--cor-fundo);
+     background-color: rgb(3, 3, 57);
+}
+
+.container {
+    padding: 1.5rem;
+    margin: 0 auto;
+    max-width: 800px;
+}

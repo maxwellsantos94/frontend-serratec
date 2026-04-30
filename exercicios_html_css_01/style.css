@@ -1,0 +1,63 @@
+/* Body */
+body {
+    background-color: lightcyan;
+    color: #333;
+    font-family: Arial, Verdana, sans-serif;
+    margin: 15px;
+}
+
+/* Título principal */
+h1 {
+    text-align: center;
+    color: red;
+}
+
+/* Links */
+a {
+    color: blue;
+    text-decoration: none;
+}
+
+a:hover {
+    color: orange;
+    text-decoration: underline;
+}
+
+/* Listas */
+ul, ol {
+    padding-left: 35px;
+}
+
+li {
+    margin-bottom: 6px;
+}
+
+/* Formulário */
+input {
+    width: 200px;
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+/* Botões */
+button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: blueviolet;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    padding: 10px 15px;
+}
+
+/*Imagens */
+img {
+    border-radius: 10px;
+    margin-top: 10px;
+}
