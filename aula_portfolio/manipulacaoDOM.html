@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manipulando o DOM</title>
+
+    <style>
+      body {
+        color: #333;
+      }
+
+      .bloco {
+        padding: 15px;
+        margin-top: 20px;
+        border: 1px solid #000;
+      }
+
+      .destaque {
+        color: white;
+        padding: 15px;
+        margin-top: 20px;
+        border: 1px solid #000;
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bloco">
+      <h1>Exemplo 1: Alterando Texto</h1>
+      <h2 id="titulo">Título Original</h2>
+      <button onclick="mudarTexto()">Mudar Texto</button>
+    </div>
+
+    <div id="blocoEstilizado" class="bloco">
+      <h1>Exemplo 2: Alterando Estilo</h1>
+      <p id="paragrafo">Isso é um texto....</p>
+      <button onclick="mudarCor()">Mudar Cor</button>
+    </div>
+
+    <div class="bloco">
+      <h1>Exemplo 3: Lista Dinâmica</h1>
+      <ul id="listaDinamica">
+        <li>Elemento 1</li>
+      </ul>
+      <button onclick="adicionar()">Adicionar</button>
+    </div>
+
+    <div class="bloco">
+      <h1>Exemplo 4: Formulário</h1>
+      <form id="meuForm">
+        <input
+          type="text"
+          id="campoNome"
+          placeholder="Digite seu nome..."
+          required
+        />
+        <input
+          type="email"
+          id="campoEmail"
+          placeholder="Digite seu email..."
+          required
+        />
+        <button type="submit">Enviar</button>
+      </form>
+      <p id="mensagem"></p>
+    </div>
+  </body>
+
+  <script>
+    function mudarTexto() {
+      const titulo = document.getElementById("titulo");
+      titulo.innerText = "Título Alterado!!!";
+    }
+
+    function mudarCor() {
+      const paragrafo = document.getElementById("paragrafo");
+      const bloco = document.getElementById("blocoEstilizado");
+
+      paragrafo.style.color = "blue";
+      paragrafo.style.fontWeight = "bold";
+
+      bloco.classList.toggle("destaque");
+    }
+
+    function adicionar() {
+      const lista = document.getElementById("listaDinamica");
+      const novoItem = document.createElement("li");
+      novoItem.innerText = "Novo Item " + new Date().toLocaleTimeString();
+
+      lista.appendChild(novoItem);
+    }
+
+    const formulario = document.getElementById("meuForm");
+
+    formulario.addEventListener("submit", function (event) {
+      // impede o comportamento padrão do submit
+      event.preventDefault();
+
+      const nome = document.getElementById("campoNome").value;
+      const email = document.getElementById("campoEmail").value;
+      const mensagem = document.getElementById("mensagem");
+
+      if (nome.trim() !== "") {
+        mensagem.innerText = `Olá ${nome}, seja bem-vindo!`;
+        mensagem.style.color = "green";
+        console.log(`Olá ${nome}, seja bem-vindo!`);
+      }
+    });
+  </script>
+</html>

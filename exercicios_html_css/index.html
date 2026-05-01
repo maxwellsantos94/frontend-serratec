@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Meta tags -->
+    <meta name="description" content="Exercícios HTML e CSS 02" />
+    <meta name="author" content="Maxwell Santos" />
+
+    <title>Exercicios HTML #02</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Cabeçalho -->
+    <header>
+      <h1 id="topo">Minha Página</h1>
+      <p>Algum texto no parágrafo</p>
+
+      <!-- Menu de navegação -->
+      <nav>
+        <ul>
+          <li><a href="#secao">Ir para seção interna</a></li>
+          <li>
+            <a href="https://www.bloomberg.com.br/" target="_blank"
+              >Ir para o Bloomberg</a
+            >
+          </li>
+          <li><a href="pagina2.html">Ir para página 2</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Conteúdo principal -->
+    <main>
+      <!-- Listas -->
+      <section>
+        <h2>Lista Ordenada</h2>
+        <ol>
+          <li>Item 1</li>
+          <li>Item 2</li>
+          <li>Item 3</li>
+        </ol>
+
+        <h2>Lista não Ordenada</h2>
+        <ul>
+          <li>Laranja</li>
+          <li>Maçã</li>
+          <li>Banana</li>
+        </ul>
+
+        <!-- Lista descritiva -->
+        <h2>Lista Descritiva</h2>
+        <dl>
+          <dt>HTML</dt>
+          <dd>Linguagem de marcação</dd>
+
+          <dt>CSS</dt>
+          <dd>Usado para estilização</dd>
+
+          <dt>JavaScript</dt>
+          <dd>Linguagem de programação, responsável pela interatividade</dd>
+        </dl>
+      </section>
+
+      <!-- Imagem -->
+      <section>
+        <h2>Imagem</h2>
+        <figure>
+          <img
+            src="https://midias.eurodicas.com.br/wp-content/uploads/2024/06/tudo-sobre-a-grecia-1.jpg.webp"
+            alt="Foto da Grécia"
+            width="300"
+            height="220"
+          />
+        </figure>
+      </section>
+
+      <!-- Inputs -->
+      <section>
+        <h2>Inputs e botões</h2>
+        <label for="texto1">Texto 1:</label>
+        <input
+          type="text"
+          id="texto1"
+          name="texto1"
+          placeholder="Texto 1"
+          required
+        />
+
+        <br />
+
+        <label for="texto2">Texto 2</label>
+        <input
+          type="text"
+          id="texto2"
+          name="texto2"
+          placeholder="Texto 2"
+          required
+        />
+
+        <br />
+
+        <button type="submit" class="btn1">Botão 1</button>
+        <button type="reset" class="btn2">Botão 2</button>
+      </section>
+
+      <!-- Seção interna -->
+      <section id="secao">
+        <h2 id="secao">Seção Interna</h2>
+        <p>Você clicou em um link interno</p>
+        <a href="#topo">Voltar ao topo da página</a>
+      </section>
+
+      <!-- agrupamento -->
+      <section>
+        <article style="background-color: lightblue; padding: 10px">
+          <h3>Div 1</h3>
+          <p>Conteúdo agrupado</p>
+        </article>
+
+        <article style="background-color: lightgray; padding: 10px">
+          <h3>Div 2</h3>
+          <p>Outro agrupamento</p>
+        </article>
+      </section>
+
+      <!-- Tabela -->
+      <section>
+        <h2>Tabela</h2>
+        <table border="1">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Idade</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Ana</td>
+              <td>20</td>
+              <td>RJ</td>
+            </tr>
+            <tr>
+              <td>João</td>
+              <td>25</td>
+              <td>SP</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Vídeo -->
+      <section>
+        <h2>Vídeo</h2>
+        <video controls width="300">
+          <source src="video.mp4" type="video/mp4" />
+          Vídeo não suportado.
+        </video>
+
+        <!-- Áudio -->
+        <h2>Áudio</h2>
+        <audio controls>
+          <source
+            src="HELLOWEEN - Forever And One (Neverland) - Helloween.mp3"
+            type="audio/mpeg"
+          />
+        </audio>
+      </section>
+
+      <!-- Formulário -->
+      <section>
+        <h2>Formulário</h2>
+        <form action="#" method="post">
+          <label for="nome">Nome:</label>
+          <input
+            type="text"
+            id="nome"
+            name="nome"
+            placeholder="Digite seu nome"
+            required
+          />
+          <br /><br />
+
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Digite seu email"
+            required
+          />
+          <br /><br />
+
+          <label for="senha">Senha</label>
+          <input
+            type="password"
+            id="senha"
+            name="senha"
+            placeholder="Digite sua senha"
+            required
+          />
+
+          <br /><br />
+
+          <p>Sexo:</p>
+          <input type="radio" name="sexo" id="masc" value="masculino" />
+          <label for="masc">Masculino</label>
+
+          <input type="radio" name="sexo" id="fem" value="feminino" />
+          <label for="fem">Feminino</label>
+
+          <br />
+          <br />
+
+          <label for="interesses">Interesses:</label>
+          <input type="checkbox" id="musica" value="musica" />
+          <label for="musica">Música</label>
+
+          <input type="checkbox" id="esporte" value="esporte" />
+          <label for="esporte">Esporte</label>
+
+          <br />
+          <br />
+
+          <button type="submit">Enviar</button>
+          <button type="reset">Reset</button>
+        </form>
+      </section>
+
+      <!-- Galeria -->
+      <section>
+        <img
+          src="https://www.melhoresdestinos.com.br/wp-content/uploads/2023/07/suica-Lauterbrunnen-capa.jpg"
+          alt="Foto da Suiça"
+          width="600"
+          height="350"
+        />
+        <img
+          src="https://e4vwvaermbj.exactdn.com/wp-content/uploads/2022/03/portofino_blog01-mar22_grecia.jpg?strip=all&lossy=1&ssl=1"
+          alt="Foto da Grécia"
+          width="600"
+          height="350"
+        />
+        <img
+          src="https://wise.com/imaginary-v2/e57def54f829e2bad52465c9fbaffeed.jpg?width=1200"
+          alt="Foto do Japão"
+          width="600"
+          height="350"
+        />
+      </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+      <h2>Redes Sociais</h2>
+      <a href="https://www.facebook.com/" target="_blank">
+        <img src="facebook_icon.png" alt="Facebook" width="50" height="50" />
+      </a>
+
+      <a href="https://www.instagram.com/" target="_blank">
+        <img src="Instagram_icon.png" alt="Instagram" width="50" height="50" />
+      </a>
+    </footer>
+  </body>
+</html>
